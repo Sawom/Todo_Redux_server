@@ -31,6 +31,7 @@ const run = async () => {
 
     app.get('/task', async (req, res) => {
       let query = {};
+      // backend filter logic
       if (req.query.priority) {
         query.priority = req.query.priority;
       }
@@ -64,7 +65,7 @@ const run = async () => {
       const id = req.params.id;
       console.log(id);
       const task = req.body;
-      const filter = { _id: ObjectId(id) };
+      const filter = { _id: new ObjectId(id) };
       const updateDoc = {
         $set: {
           isCompleted: task.isCompleted,
