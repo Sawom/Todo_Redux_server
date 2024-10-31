@@ -29,7 +29,7 @@ const run = async () => {
     //   res.send({ status: true, data: tasks });
     // });
 
-    app.get('/tasks', async (req, res) => {
+    app.get('/task', async (req, res) => {
       let query = {};
       if (req.query.priority) {
         query.priority = req.query.priority;
